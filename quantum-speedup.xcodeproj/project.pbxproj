@@ -1,0 +1,673 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6A2A286E292BBF9100EFDB8A /* ShorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2A286D292BBF9100EFDB8A /* ShorView.swift */; };
+		6A2A2870292BC3AF00EFDB8A /* GroverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2A286F292BC3AF00EFDB8A /* GroverView.swift */; };
+		86A336ED291F96F6004D02B0 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336EC291F96F6004D02B0 /* Matrix.swift */; };
+		86A336EF291F9722004D02B0 /* MetalContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336EE291F9722004D02B0 /* MetalContext.swift */; };
+		86A336F1291F9A8F004D02B0 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336F0291F9A8F004D02B0 /* Vector.swift */; };
+		86A336F3291FBAE7004D02B0 /* QuantumRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336F2291FBAE7004D02B0 /* QuantumRegister.swift */; };
+		86A336F5291FBB0F004D02B0 /* Valve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336F4291FBB0F004D02B0 /* Valve.swift */; };
+		86A336F7291FBC5B004D02B0 /* ArrayHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336F6291FBC5B004D02B0 /* ArrayHelper.swift */; };
+		86A336F9291FBDC0004D02B0 /* Valves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336F8291FBDC0004D02B0 /* Valves.swift */; };
+		86B877CC291F74F10051C3D8 /* quantum_speedupApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B877CB291F74F10051C3D8 /* quantum_speedupApp.swift */; };
+		86B877CE291F74F10051C3D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B877CD291F74F10051C3D8 /* ContentView.swift */; };
+		86B877D0291F74F20051C3D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86B877CF291F74F20051C3D8 /* Assets.xcassets */; };
+		86B877D4291F74F20051C3D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86B877D3291F74F20051C3D8 /* Preview Assets.xcassets */; };
+		86B877DE291F74F20051C3D8 /* quantum_speedupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B877DD291F74F20051C3D8 /* quantum_speedupTests.swift */; };
+		86B877E8291F74F20051C3D8 /* quantum_speedupUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B877E7291F74F20051C3D8 /* quantum_speedupUITests.swift */; };
+		86B877EA291F74F20051C3D8 /* quantum_speedupUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B877E9291F74F20051C3D8 /* quantum_speedupUITestsLaunchTests.swift */; };
+		86B877FE291F764C0051C3D8 /* matrix-actions.metal in Sources */ = {isa = PBXBuildFile; fileRef = 86B877FD291F764C0051C3D8 /* matrix-actions.metal */; };
+		86B87806291F8BC40051C3D8 /* Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B87805291F8BC40051C3D8 /* Complex.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		86B877DA291F74F20051C3D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86B877C0291F74F10051C3D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86B877C7291F74F10051C3D8;
+			remoteInfo = "quantum-speedup";
+		};
+		86B877E4291F74F20051C3D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86B877C0291F74F10051C3D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86B877C7291F74F10051C3D8;
+			remoteInfo = "quantum-speedup";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6A2A286D292BBF9100EFDB8A /* ShorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShorView.swift; sourceTree = "<group>"; };
+		6A2A286F292BC3AF00EFDB8A /* GroverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroverView.swift; sourceTree = "<group>"; };
+		86A336EC291F96F6004D02B0 /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		86A336EE291F9722004D02B0 /* MetalContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalContext.swift; sourceTree = "<group>"; };
+		86A336F0291F9A8F004D02B0 /* Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
+		86A336F2291FBAE7004D02B0 /* QuantumRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantumRegister.swift; sourceTree = "<group>"; };
+		86A336F4291FBB0F004D02B0 /* Valve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Valve.swift; sourceTree = "<group>"; };
+		86A336F6291FBC5B004D02B0 /* ArrayHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayHelper.swift; sourceTree = "<group>"; };
+		86A336F8291FBDC0004D02B0 /* Valves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Valves.swift; sourceTree = "<group>"; };
+		86B877C8291F74F10051C3D8 /* quantum-speedup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "quantum-speedup.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86B877CB291F74F10051C3D8 /* quantum_speedupApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quantum_speedupApp.swift; sourceTree = "<group>"; };
+		86B877CD291F74F10051C3D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		86B877CF291F74F20051C3D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		86B877D1291F74F20051C3D8 /* quantum_speedup.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = quantum_speedup.entitlements; sourceTree = "<group>"; };
+		86B877D3291F74F20051C3D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		86B877D9291F74F20051C3D8 /* quantum-speedupTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "quantum-speedupTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86B877DD291F74F20051C3D8 /* quantum_speedupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quantum_speedupTests.swift; sourceTree = "<group>"; };
+		86B877E3291F74F20051C3D8 /* quantum-speedupUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "quantum-speedupUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86B877E7291F74F20051C3D8 /* quantum_speedupUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quantum_speedupUITests.swift; sourceTree = "<group>"; };
+		86B877E9291F74F20051C3D8 /* quantum_speedupUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quantum_speedupUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		86B877FD291F764C0051C3D8 /* matrix-actions.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = "matrix-actions.metal"; sourceTree = "<group>"; };
+		86B87805291F8BC40051C3D8 /* Complex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complex.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		86B877C5291F74F10051C3D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86B877D6291F74F20051C3D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86B877E0291F74F20051C3D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		86B877BF291F74F10051C3D8 = {
+			isa = PBXGroup;
+			children = (
+				86B877CA291F74F10051C3D8 /* quantum-speedup */,
+				86B877DC291F74F20051C3D8 /* quantum-speedupTests */,
+				86B877E6291F74F20051C3D8 /* quantum-speedupUITests */,
+				86B877C9291F74F10051C3D8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		86B877C9291F74F10051C3D8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				86B877C8291F74F10051C3D8 /* quantum-speedup.app */,
+				86B877D9291F74F20051C3D8 /* quantum-speedupTests.xctest */,
+				86B877E3291F74F20051C3D8 /* quantum-speedupUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		86B877CA291F74F10051C3D8 /* quantum-speedup */ = {
+			isa = PBXGroup;
+			children = (
+				86B877F6291F75080051C3D8 /* models */,
+				86B877CB291F74F10051C3D8 /* quantum_speedupApp.swift */,
+				6A2A286D292BBF9100EFDB8A /* ShorView.swift */,
+				6A2A286F292BC3AF00EFDB8A /* GroverView.swift */,
+				86B877CD291F74F10051C3D8 /* ContentView.swift */,
+				86B877CF291F74F20051C3D8 /* Assets.xcassets */,
+				86B877D1291F74F20051C3D8 /* quantum_speedup.entitlements */,
+				86B877D2291F74F20051C3D8 /* Preview Content */,
+			);
+			path = "quantum-speedup";
+			sourceTree = "<group>";
+		};
+		86B877D2291F74F20051C3D8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				86B877D3291F74F20051C3D8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		86B877DC291F74F20051C3D8 /* quantum-speedupTests */ = {
+			isa = PBXGroup;
+			children = (
+				86B877DD291F74F20051C3D8 /* quantum_speedupTests.swift */,
+			);
+			path = "quantum-speedupTests";
+			sourceTree = "<group>";
+		};
+		86B877E6291F74F20051C3D8 /* quantum-speedupUITests */ = {
+			isa = PBXGroup;
+			children = (
+				86B877E7291F74F20051C3D8 /* quantum_speedupUITests.swift */,
+				86B877E9291F74F20051C3D8 /* quantum_speedupUITestsLaunchTests.swift */,
+			);
+			path = "quantum-speedupUITests";
+			sourceTree = "<group>";
+		};
+		86B877F6291F75080051C3D8 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				86B877FD291F764C0051C3D8 /* matrix-actions.metal */,
+				86B87805291F8BC40051C3D8 /* Complex.swift */,
+				86A336F0291F9A8F004D02B0 /* Vector.swift */,
+				86A336EC291F96F6004D02B0 /* Matrix.swift */,
+				86A336EE291F9722004D02B0 /* MetalContext.swift */,
+				86A336F2291FBAE7004D02B0 /* QuantumRegister.swift */,
+				86A336F4291FBB0F004D02B0 /* Valve.swift */,
+				86A336F6291FBC5B004D02B0 /* ArrayHelper.swift */,
+				86A336F8291FBDC0004D02B0 /* Valves.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		86B877C7291F74F10051C3D8 /* quantum-speedup */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86B877ED291F74F20051C3D8 /* Build configuration list for PBXNativeTarget "quantum-speedup" */;
+			buildPhases = (
+				86B877C4291F74F10051C3D8 /* Sources */,
+				86B877C5291F74F10051C3D8 /* Frameworks */,
+				86B877C6291F74F10051C3D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "quantum-speedup";
+			productName = "quantum-speedup";
+			productReference = 86B877C8291F74F10051C3D8 /* quantum-speedup.app */;
+			productType = "com.apple.product-type.application";
+		};
+		86B877D8291F74F20051C3D8 /* quantum-speedupTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86B877F0291F74F20051C3D8 /* Build configuration list for PBXNativeTarget "quantum-speedupTests" */;
+			buildPhases = (
+				86B877D5291F74F20051C3D8 /* Sources */,
+				86B877D6291F74F20051C3D8 /* Frameworks */,
+				86B877D7291F74F20051C3D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86B877DB291F74F20051C3D8 /* PBXTargetDependency */,
+			);
+			name = "quantum-speedupTests";
+			productName = "quantum-speedupTests";
+			productReference = 86B877D9291F74F20051C3D8 /* quantum-speedupTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		86B877E2291F74F20051C3D8 /* quantum-speedupUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86B877F3291F74F20051C3D8 /* Build configuration list for PBXNativeTarget "quantum-speedupUITests" */;
+			buildPhases = (
+				86B877DF291F74F20051C3D8 /* Sources */,
+				86B877E0291F74F20051C3D8 /* Frameworks */,
+				86B877E1291F74F20051C3D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86B877E5291F74F20051C3D8 /* PBXTargetDependency */,
+			);
+			name = "quantum-speedupUITests";
+			productName = "quantum-speedupUITests";
+			productReference = 86B877E3291F74F20051C3D8 /* quantum-speedupUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		86B877C0291F74F10051C3D8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					86B877C7291F74F10051C3D8 = {
+						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
+					};
+					86B877D8291F74F20051C3D8 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 86B877C7291F74F10051C3D8;
+					};
+					86B877E2291F74F20051C3D8 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 86B877C7291F74F10051C3D8;
+					};
+				};
+			};
+			buildConfigurationList = 86B877C3291F74F10051C3D8 /* Build configuration list for PBXProject "quantum-speedup" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 86B877BF291F74F10051C3D8;
+			productRefGroup = 86B877C9291F74F10051C3D8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				86B877C7291F74F10051C3D8 /* quantum-speedup */,
+				86B877D8291F74F20051C3D8 /* quantum-speedupTests */,
+				86B877E2291F74F20051C3D8 /* quantum-speedupUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		86B877C6291F74F10051C3D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86B877D4291F74F20051C3D8 /* Preview Assets.xcassets in Resources */,
+				86B877D0291F74F20051C3D8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86B877D7291F74F20051C3D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86B877E1291F74F20051C3D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		86B877C4291F74F10051C3D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A2A286E292BBF9100EFDB8A /* ShorView.swift in Sources */,
+				86A336F3291FBAE7004D02B0 /* QuantumRegister.swift in Sources */,
+				86B87806291F8BC40051C3D8 /* Complex.swift in Sources */,
+				86A336ED291F96F6004D02B0 /* Matrix.swift in Sources */,
+				86A336F7291FBC5B004D02B0 /* ArrayHelper.swift in Sources */,
+				86B877CE291F74F10051C3D8 /* ContentView.swift in Sources */,
+				86A336F1291F9A8F004D02B0 /* Vector.swift in Sources */,
+				86A336F5291FBB0F004D02B0 /* Valve.swift in Sources */,
+				86B877FE291F764C0051C3D8 /* matrix-actions.metal in Sources */,
+				86B877CC291F74F10051C3D8 /* quantum_speedupApp.swift in Sources */,
+				86A336EF291F9722004D02B0 /* MetalContext.swift in Sources */,
+				86A336F9291FBDC0004D02B0 /* Valves.swift in Sources */,
+				6A2A2870292BC3AF00EFDB8A /* GroverView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86B877D5291F74F20051C3D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86B877DE291F74F20051C3D8 /* quantum_speedupTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86B877DF291F74F20051C3D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86B877E8291F74F20051C3D8 /* quantum_speedupUITests.swift in Sources */,
+				86B877EA291F74F20051C3D8 /* quantum_speedupUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		86B877DB291F74F20051C3D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86B877C7291F74F10051C3D8 /* quantum-speedup */;
+			targetProxy = 86B877DA291F74F20051C3D8 /* PBXContainerItemProxy */;
+		};
+		86B877E5291F74F20051C3D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86B877C7291F74F10051C3D8 /* quantum-speedup */;
+			targetProxy = 86B877E4291F74F20051C3D8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		86B877EB291F74F20051C3D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		86B877EC291F74F20051C3D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		86B877EE291F74F20051C3D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "quantum-speedup/quantum_speedup.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"quantum-speedup/Preview Content\"";
+				DEVELOPMENT_TEAM = G7668ALM57;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "delta.null.quantum-speedup";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		86B877EF291F74F20051C3D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "quantum-speedup/quantum_speedup.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"quantum-speedup/Preview Content\"";
+				DEVELOPMENT_TEAM = G7668ALM57;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "delta.null.quantum-speedup";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		86B877F1291F74F20051C3D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G7668ALM57;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "delta.null.quantum-speedupTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/quantum-speedup.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/quantum-speedup";
+			};
+			name = Debug;
+		};
+		86B877F2291F74F20051C3D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G7668ALM57;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "delta.null.quantum-speedupTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/quantum-speedup.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/quantum-speedup";
+			};
+			name = Release;
+		};
+		86B877F4291F74F20051C3D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G7668ALM57;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "delta.null.quantum-speedupUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "quantum-speedup";
+			};
+			name = Debug;
+		};
+		86B877F5291F74F20051C3D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G7668ALM57;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "delta.null.quantum-speedupUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "quantum-speedup";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		86B877C3291F74F10051C3D8 /* Build configuration list for PBXProject "quantum-speedup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86B877EB291F74F20051C3D8 /* Debug */,
+				86B877EC291F74F20051C3D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86B877ED291F74F20051C3D8 /* Build configuration list for PBXNativeTarget "quantum-speedup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86B877EE291F74F20051C3D8 /* Debug */,
+				86B877EF291F74F20051C3D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86B877F0291F74F20051C3D8 /* Build configuration list for PBXNativeTarget "quantum-speedupTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86B877F1291F74F20051C3D8 /* Debug */,
+				86B877F2291F74F20051C3D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86B877F3291F74F20051C3D8 /* Build configuration list for PBXNativeTarget "quantum-speedupUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86B877F4291F74F20051C3D8 /* Debug */,
+				86B877F5291F74F20051C3D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 86B877C0291F74F10051C3D8 /* Project object */;
+}
