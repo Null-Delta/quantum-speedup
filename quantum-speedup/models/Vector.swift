@@ -42,4 +42,10 @@ extension Vector: CustomStringConvertible {
 
         return result
     }
+    
+    public static func basicVector(index: Int, size: Int) -> [Double] {
+        var array = Array.init(repeating: 0.0, count: size)
+        array[index] = 1.0
+        return array
+    }
 }

@@ -25,9 +25,9 @@ public class XMatrixGenerator: MatrixGenerator {
             values: (0..<dimension)
                 .map {
                     if $0 == 0 {
-                        return (dimension - 1).bits(size: dimension)
+                        return Vector.basicVector(index: dimension - 1, size: dimension)
                     } else {
-                        return ($0 - 1).bits(size: dimension)
+                        return Vector.basicVector(index: $0 - 1, size: dimension)
                     }
                 }
                 .flatMap { $0 }
@@ -64,8 +64,15 @@ public class HMatrixGenerator: MatrixGenerator {
         for x in 0..<dimension {
             for y in 0..<dimension {
                 let value = (2 * Float.pi) / Float(dimension)
-                matrix[x, y] = Complex(re: cos(value * Float(x * y)), im: sin(value * Float(x * y)))
-                matrix[x, y] =  matrix[x, y] * Complex(re: 1 / sqrt(Float(dimension)), im: 0)
+                
+                matrix[x, y] = Complex(
+                    re: cos(value * Float(x * y)),
+                    im: sin(value * Float(x * y))
+                )
+                matrix[x, y] = matrix[x, y] * Complex(
+                    re: 1 / sqrt(Float(dimension)),
+                    im: 0
+                )
             }
         }
 

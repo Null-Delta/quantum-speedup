@@ -9,7 +9,7 @@ import Foundation
 
 infix operator **;
 
-extension Array<Double> {
+public extension Array<Double> {
     // тензорное произведение векторов
     static func **(leftValue: [Double], rightValue: [Double]) -> [Double] {
         var result: [Double] = .init(repeating: 0, count: leftValue.count * rightValue.count)
@@ -34,7 +34,7 @@ extension Array<Double> {
     }
 }
 
-extension Float {
+public extension Float {
     /// Rounds the double to decimal places value
     func roundToPlaces(places: Int) -> Double {
         let divisor = pow(10.0, Double(places))
@@ -42,16 +42,23 @@ extension Float {
     }
 }
 
-extension Int {
-    func bit(at: Int) -> Int {
-        return (self & (1 << at)) >> at
+public extension Int {
+    func bit(at: Int, dimensity: Int = 2) -> Int {
+        var index = 0
+        var value = self
+        while(index != at) {
+            value /= dimensity
+            index += 1
+        }
+        
+        return value % dimensity
     }
 
-    func bits(size: Int) -> [Int] {
+    func bits(size: Int, dimensity: Int = 2) -> [Int] {
         var array: [Int] = []
 
         for index in 0..<size {
-            array.append(self.bit(at: index))
+            array.append(bit(at: index, dimensity: dimensity))
         }
 
         return array.reversed()
@@ -59,12 +66,12 @@ extension Int {
 }
 
 
-extension Array<Int> {
-    public func toInt() -> Int {
+public extension Array<Int> {
+    func toInt(dimension: Int) -> Int {
         var result = 0
 
         for index in 0..<self.count {
-            result += self[self.count - index - 1] * Int(powf(2, Float(index)))
+            result += self[self.count - index - 1] * Int(powf(Float(dimension), Float(index)))
         }
 
         return result

@@ -9,7 +9,7 @@ import SwiftUI
 import Charts
 
 struct ShorView: View {
-    @StateObject var register: QuantumRegister = QuantumRegister(register: [0])
+    @StateObject var register: QuantumRegister = QuantumRegister(register: [0], dimensity: 5)
     @State var input: String = ""
     @State var output: String = ""
     
@@ -60,11 +60,15 @@ struct ShorView: View {
     }
     
     func inputSize(for N: Int) -> Int {
-        return Int(ceil(log2(powf(Float(N), 2))))
+        
+        let log = log2(powf(Float(N),2)) / log2(Float(register.dimensity))
+
+        return Int(ceil(log))
     }
     
     func outputSize(for N: Int) -> Int {
-        return Int(ceil(log2(Float(N))))
+        let log = log2(Float(N)) / log2(Float(register.dimensity))
+        return Int(ceil(log))
     }
         
     func powMod(x: Int, r: Int, m: Int) -> Int {
@@ -125,7 +129,7 @@ struct ShorView: View {
             result[i] = register.measure(at: i)
         }
         
-        let approx = fracApprox(a: result.toInt(), b: 1 << inputSize, width: inputSize)
+        let approx = fracApprox(a: result.toInt(dimension: register.dimensity), b: 1 << inputSize, width: inputSize)
         
         var q = approx.1
         if q % 2 == 1 {

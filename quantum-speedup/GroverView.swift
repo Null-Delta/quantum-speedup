@@ -9,9 +9,9 @@ import SwiftUI
 import Charts
 
 struct GroverView: View {
-    @StateObject var register: QuantumRegister = QuantumRegister(register: [0])
+    @StateObject var register: QuantumRegister = QuantumRegister(register: [0], dimensity: 4)
     @State var indexesInput: String = ""
-    @State var sizeInput: String = "8"
+    @State var sizeInput: String = "4"
     @State var output: String = ""
     @State var isStepByStep: Bool = false
     
@@ -96,14 +96,18 @@ struct GroverView: View {
         
         switch index {
         case 0:
+            print(register.stateSum)
             for i in 0..<register.size {
                 register.apply(valve: H(at: i))
+                print(register.stateSum)
             }
             return false
             
         case let i where i < Int((Float.pi / 4.0) * sqrtf(Float(register.state.size) / Float(indexes.count))) + 1:
             register.apply(valve: function!)
             register.apply(valve: preValve!)
+            
+            print(register.stateSum)
             return false
             
         default:
@@ -141,7 +145,7 @@ struct GroverView: View {
             .split(separator: ",")
             .map { Int($0)! }
         
-        function = GroverValve(indexes: indexes, size: size)
+        function = GroverValve(indexes: indexes)
         preValve = CustomValve(
             matrix: Matrix(
                 values: .init(
@@ -151,8 +155,8 @@ struct GroverView: View {
             )
         )
         
-        for x in 0..<Int(powf(2, Float(register.size))) {
-            for y in 0..<Int(powf(2, Float(register.size))) {
+        for x in 0..<Int(powf(Float(register.dimensity), Float(register.size))) {
+            for y in 0..<Int(powf(Float(register.dimensity), Float(register.size))) {
                 preValve!.matrix[x, y] = Complex(re: 2 / Float(register.state.size), im: 0)
                 if x == y {
                     preValve!.matrix[x, y] = preValve!.matrix[x, y] - Complex(re: 1, im: 0)
@@ -168,7 +172,7 @@ struct GroverView: View {
             result.append(register.measure(at: i))
         }
 
-        output = "\(result.toInt())"
+        output = "\(result.toInt(dimension: register.dimensity))"
     }
     
     func grover() {

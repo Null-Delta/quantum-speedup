@@ -30,10 +30,10 @@ public class SingleValve: Valve {
     }
 
     public func generateMatrix(for register: QuantumRegister) -> Matrix {
-        var result: Matrix = qbitIndex == 0 ? generator.generate(dimension: register.dimension) : Matrix.identity(dimension: register.dimension)
+        var result: Matrix = qbitIndex == 0 ? generator.generate(dimension: register.dimensity) : Matrix.identity(dimension: register.dimensity)
 
         for i in 1..<register.size {
-            result = result ** (qbitIndex == i ? generator.generate(dimension: register.dimension) : Matrix.identity(dimension: register.dimension))
+            result = result ** (qbitIndex == i ? generator.generate(dimension: register.dimensity) : Matrix.identity(dimension: register.dimensity))
         }
         return result
     }
@@ -71,27 +71,13 @@ public class ControlledValve: Valve {
         var values: [Vector] = .init(repeating: Vector(values: []), count: register.state.size)
         let valveMatrix = valve.generateMatrix(for: register)
 
-        let group = DispatchGroup()
-        let actionsCount = min(register.state.size, 4)
-        let actionsPetThread = register.state.size / actionsCount
-
-        for actionIndex in 0..<actionsCount {
-            group.enter()
-            DispatchQueue.global(qos: .userInteractive).async { [unowned self] in
-                for inputIndex in 0..<actionsPetThread {
-                    let qubitIndex = inputIndex * actionsCount + actionIndex
-
-                    if checkControlQbits(for: qubitIndex, size: register.size) {
-                        values[qubitIndex] = register.basicState(stateIndex: qubitIndex) * valveMatrix
-                    } else {
-                        values[qubitIndex] = register.basicState(stateIndex: qubitIndex)
-                    }
-                }
-                group.leave()
+        for qubitIndex in 0..<register.state.size {
+            if checkControlQbits(for: qubitIndex, size: register.size) {
+                values[qubitIndex] = register.basicState(stateIndex: qubitIndex) * valveMatrix
+            } else {
+                values[qubitIndex] = register.basicState(stateIndex: qubitIndex)
             }
         }
-        
-        group.wait()
         return Matrix(values: values.flatMap({ $0.values })).rotated
     }
 
@@ -121,32 +107,34 @@ public class FunctionValve: Valve {
     }
 
     public func generateMatrix(for register: QuantumRegister) -> Matrix {
-        return MetalContext.shared.functionMatrix(x: x, m: m, outputSize: outputSize, size: Int(powf(2, Float(register.size)))).rotated
+        return MetalContext.shared.functionMatrix(
+            x: x,
+            m: m,
+            outputSize: outputSize,
+            size: Int(powf(
+                Float(register.dimensity),
+                Float(register.size)
+            ))
+        ).rotated
     }
 }
 
 public class GroverValve: Valve {
     var indexes: [Int]
-    var size: Int
 
-    public init(indexes: [Int], size: Int) {
+    public init(indexes: [Int]) {
         self.indexes = indexes
-        self.size = size
     }
 
     public func generateMatrix(for register: QuantumRegister) -> Matrix {
-        var matrix = Matrix.identity(dimension: register.dimension)
+        var matrix = Matrix.identity(dimension: register.dimensity)
         
-        for _ in 0..<size - 1 {
-            matrix = matrix ** Matrix.identity(dimension: register.dimension)
+        for _ in 0..<register.size - 1 {
+            matrix = matrix ** Matrix.identity(dimension: register.dimensity)
         }
         
         for trueIndex in indexes {
             matrix[trueIndex, trueIndex] = -1
-        }
-        
-        for _ in 0..<(register.size - size) {
-            matrix = matrix ** Matrix.identity(dimension: register.dimension)
         }
         
         return matrix

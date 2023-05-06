@@ -123,31 +123,64 @@ final class quantum_speedupTests: XCTestCase {
 
         let funcs = [ func1, func2, func3, func4 ]
         for i in 0..<4 {
-            var qRegister = QuantumRegister(register: [0, 1])
+            let qRegister = QuantumRegister(register: [0, 1], dimensity: 2)
 
             qRegister.apply(valve: H(at: 0))
-            print(qRegister.stateSum)
             qRegister.apply(valve: H(at: 1))
-            print(qRegister.stateSum)
-
+            
             qRegister.apply(valve: CustomValve(matrix: funcs[i]))
-            print(qRegister.stateSum)
 
             qRegister.apply(valve: H(at: 0))
-            print(qRegister.stateSum)
 
             XCTAssert((i < 2 ? 0 : 1) == qRegister.measure(at: 0))
         }
     }
+    
+    func testBits() {
+        let value: Int = 123
+        XCTAssert([1, 7, 3] == value.bits(size: 3, dimensity: 8))
+    }
 
     func testControlledValveConstruct() {
-        var register = QuantumRegister(register: [0,0,0,0,0,0,0,0,0,0,0,0])
-        let valve = SingleValve(matrix: Matrix(values: [1, 0, 0, 1]), qbitIndex: 0)
+        let register = QuantumRegister(register: [0,0,0,0,0,0,0,0,0,0], dimensity: 2)
+        let valve = SingleValve(generator: IdentityMatrixGenerator(), qbitIndex: 0)
         let controlledValve = ControlledValve(controlIndexes: [0], valve: valve)
 
         measure {
             register.apply(valve: controlledValve)
         }
+    }
+    
+    func testControlledValveConstructCurrect() {
+        let register = QuantumRegister(register: [0, 0], dimensity: 2)
+        let valve = SingleValve(generator: XMatrixGenerator(), qbitIndex: 1)
+        let controlledValve = ControlledValve(controlIndexes: [0], valve: valve)
+
+        XCTAssert(
+            Matrix(values: [
+                1, 0, 0, 0,
+                0, 1, 0, 0,
+                0, 0, 0, 1,
+                0, 0, 1, 0
+            ]) == controlledValve.generateMatrix(for: register)
+        )
+    }
+    
+    func testXGenerator() {
+        XCTAssert(
+            Matrix(values: [
+                0, 1,
+                1, 0
+            ]) == XMatrixGenerator().generate(dimension: 2)
+        )
+        
+        XCTAssert(
+            Matrix(values: [
+                0, 0, 1,
+                1, 0, 0,
+                0, 1, 0
+            ]) == XMatrixGenerator().generate(dimension: 3)
+        )
     }
 
     func testMatrixRotate() throws {

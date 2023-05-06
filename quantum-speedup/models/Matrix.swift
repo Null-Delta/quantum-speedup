@@ -40,7 +40,7 @@ extension Matrix: CustomStringConvertible {
         for y in 0..<size {
             for x in 0..<size {
                 
-                result += "\(Int(values[y * size + x].re)), "
+                result += "\(values[y * size + x]), "
             }
             result += "\n"
         }
