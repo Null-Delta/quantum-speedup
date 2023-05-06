@@ -12,10 +12,7 @@ import Foundation
 class I: SingleValve {
     init(at qbitIndex: Int) {
         super.init(
-            matrix: Matrix(values: [
-                1, 0,
-                0, 1
-            ]),
+            generator: IdentityMatrixGenerator(),
             qbitIndex: qbitIndex
         )
     }
@@ -24,10 +21,7 @@ class I: SingleValve {
 public class H: SingleValve {
     public init(at qbitIndex: Int) {
         super.init(
-            matrix: Matrix(values: [
-                1, 1,
-                1,-1
-            ].map { $0 / Complex(re: sqrt(2), im: 0) }),
+            generator: HMatrixGenerator(),
             qbitIndex: qbitIndex
         )
     }
@@ -36,22 +30,7 @@ public class H: SingleValve {
 class X: SingleValve {
     init(at qbitIndex: Int) {
         super.init(
-            matrix: Matrix(values: [
-                0, 1,
-                1, 0
-            ]),
-            qbitIndex: qbitIndex
-        )
-    }
-}
-
-class Y: SingleValve {
-    init(at qbitIndex: Int) {
-        super.init(
-            matrix: Matrix(values: [
-                0, Complex(re: 0, im: -1),
-                .i, 0
-            ]),
+            generator: XMatrixGenerator(),
             qbitIndex: qbitIndex
         )
     }
@@ -60,46 +39,7 @@ class Y: SingleValve {
 class Z: SingleValve {
     init(at qbitIndex: Int) {
         super.init(
-            matrix: Matrix(values: [
-                1, 0,
-                0,-1
-            ]),
-            qbitIndex: qbitIndex
-        )
-    }
-}
-
-public class R: SingleValve {
-    public init(at qbitIndex: Int, angle: Float) {
-        super.init(
-            matrix: Matrix(values: [
-                1, 0,
-                0, Complex(re: cosf(angle), im: sinf(angle))
-            ]),
-            qbitIndex: qbitIndex
-        )
-    }
-}
-
-class S: SingleValve {
-    init(at qbitIndex: Int) {
-        super.init(
-            matrix: Matrix(values: [
-                1, 0,
-                0, .i
-            ]),
-            qbitIndex: qbitIndex
-        )
-    }
-}
-
-class T: SingleValve {
-    init(at qbitIndex: Int) {
-        super.init(
-            matrix: Matrix(values: [
-                1, 0,
-                0, Complex(re: cos(Float.pi / 4.0), im: sin(Float.pi / 4.0))
-            ]),
+            generator: ZMatrixGenerator(),
             qbitIndex: qbitIndex
         )
     }
@@ -139,8 +79,10 @@ public class RQFT: Valve {
     }
 
     public func generateMatrix(for register: QuantumRegister) -> Matrix {
-        var qftMatrix = Matrix(values: .init(repeating: 0, count: Int(powf(2, Float(qbitCount)) * powf(2, Float(qbitCount)))))
-        //TODO: fill matrix
+        var qftMatrix = Matrix(values: .init(
+            repeating: 0,
+            count: Int(powf(Float(register.dimension), Float(qbitCount)) * powf(Float(register.dimension), Float(qbitCount))))
+        )
 
         for x in 0..<qftMatrix.size {
             for y in 0..<qftMatrix.size {
@@ -151,7 +93,7 @@ public class RQFT: Valve {
         }
 
         for _ in 0..<register.size - qbitCount {
-            qftMatrix = qftMatrix ** Matrix(values: [1, 0, 0, 1])
+            qftMatrix = qftMatrix ** Matrix.identity(dimension: register.dimension)
         }
 
         return qftMatrix.rotated

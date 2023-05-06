@@ -66,3 +66,15 @@ extension Matrix {
         return MetalContext.shared.rotateMatrix(matrix: self)
     }
 }
+
+extension Matrix {
+    public static func identity(dimension: Int) -> Matrix {
+        let matrix = Matrix(values: .init(repeating: 0, count: dimension * dimension))
+
+        for i in 0..<dimension {
+            matrix[i, i] = 1
+        }
+
+        return matrix
+    }
+}

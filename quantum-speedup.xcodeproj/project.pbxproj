@@ -25,6 +25,7 @@
 		86B877EA291F74F20051C3D8 /* quantum_speedupUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B877E9291F74F20051C3D8 /* quantum_speedupUITestsLaunchTests.swift */; };
 		86B877FE291F764C0051C3D8 /* matrix-actions.metal in Sources */ = {isa = PBXBuildFile; fileRef = 86B877FD291F764C0051C3D8 /* matrix-actions.metal */; };
 		86B87806291F8BC40051C3D8 /* Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B87805291F8BC40051C3D8 /* Complex.swift */; };
+		912E08AB2A019BF800525CC4 /* MatrixGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E08AA2A019BF800525CC4 /* MatrixGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		86B877E9291F74F20051C3D8 /* quantum_speedupUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quantum_speedupUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		86B877FD291F764C0051C3D8 /* matrix-actions.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = "matrix-actions.metal"; sourceTree = "<group>"; };
 		86B87805291F8BC40051C3D8 /* Complex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complex.swift; sourceTree = "<group>"; };
+		912E08AA2A019BF800525CC4 /* MatrixGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				86A336F4291FBB0F004D02B0 /* Valve.swift */,
 				86A336F6291FBC5B004D02B0 /* ArrayHelper.swift */,
 				86A336F8291FBDC0004D02B0 /* Valves.swift */,
+				912E08AA2A019BF800525CC4 /* MatrixGenerator.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			files = (
 				6A2A286E292BBF9100EFDB8A /* ShorView.swift in Sources */,
 				86A336F3291FBAE7004D02B0 /* QuantumRegister.swift in Sources */,
+				912E08AB2A019BF800525CC4 /* MatrixGenerator.swift in Sources */,
 				86B87806291F8BC40051C3D8 /* Complex.swift in Sources */,
 				86A336ED291F96F6004D02B0 /* Matrix.swift in Sources */,
 				86A336F7291FBC5B004D02B0 /* ArrayHelper.swift in Sources */,
