@@ -9,7 +9,7 @@ import SwiftUI
 import Charts
 
 struct ShorView: View {
-    @StateObject var register: QuantumRegister = QuantumRegister(register: [0], dimensity: 5)
+    @StateObject var register: QuantumRegister = QuantumRegister(register: [0], dimensity: 2)
     @State var input: String = ""
     @State var output: String = ""
     
@@ -82,7 +82,7 @@ struct ShorView: View {
         return result
     }
     
-    func fracApprox(a: Int, b: Int, width: Int) -> (Int, Int) {
+    func fracApprox(a: Int, b: Int) -> (Int, Int) {
         let f = Double(a) / Double(b)
         var g = f
         var i = 0.0, num2 = 0.0, den2 = 1.0, num1 = 1.0, den1 = 0.0, num = 0.0, den = 0.0
@@ -106,10 +106,10 @@ struct ShorView: View {
 
         return (Int(abs(num)), Int(abs(den)))
     }
-        
+
     func shorFactorization() {
         guard let N = Int(input) else { return }
-        let X = randomX(for: N)
+        let X = 7//randomX(for: N)
         let inputSize = inputSize(for: N)
         let outputSize = outputSize(for: N)
         let function = FunctionValve(x: X, m: N, inputSize: inputSize, outputSize: outputSize)
@@ -128,8 +128,8 @@ struct ShorView: View {
         for i in 0..<inputSize {
             result[i] = register.measure(at: i)
         }
-        
-        let approx = fracApprox(a: result.toInt(dimension: register.dimensity), b: 1 << inputSize, width: inputSize)
+
+        let approx = fracApprox(a: result.toInt(dimension: register.dimensity), b: 1 << inputSize)
         
         var q = approx.1
         if q % 2 == 1 {

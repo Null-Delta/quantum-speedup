@@ -57,6 +57,24 @@ public class ZMatrixGenerator: MatrixGenerator {
     public init() { }
 }
 
+public class RZMatrixGenerator: MatrixGenerator {
+    let angle: Float
+
+    public func generate(dimension: Int) -> Matrix {
+        let matrix = Matrix(values: .init(repeating: 0, count: dimension * dimension))
+
+        for i in 0..<dimension {
+            matrix[i, i] = Complex(re: cos(Float(i) * angle), im: sin(Float(i) * angle))
+        }
+
+        return matrix
+    }
+
+    public init(angle: Float) {
+        self.angle = angle
+    }
+}
+
 public class HMatrixGenerator: MatrixGenerator {
     public func generate(dimension: Int) -> Matrix {
         let matrix = Matrix(values: .init(repeating: 0, count: dimension * dimension))

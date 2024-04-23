@@ -10,18 +10,23 @@ import quantum_speedup
 
 final class quantum_speedupTests: XCTestCase {
     func testVectorMultMatrix() throws {
-        let vector = Vector(values: [1, 2, 3, 4])
+        let vector = Vector(values: [0, 0, 0, 0, 1, 0, 0, 0])
         let matrix = Matrix(values: [
-            1, 0, 0, 1,
-            1, 1, 0, 1,
-            1, 1, 1, 1,
-            0, 1, 0, 0
+            0, 0, 1, 0, 0, 0, 0, 0,
+            0, 0, 0, 1, 0, 0, 0, 0,
+            1, 0, 0, 0, 0, 0, 0, 0,
+            0, 1, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 1, 0,
+            0, 0, 0, 0, 0, 0, 0, 1,
+            0, 0, 0, 0, 1, 0, 0, 0,
+            0, 0, 0, 0, 0, 1, 0, 0,
+
         ])
 
         let result = vector * matrix
         print(result.values)
 
-        XCTAssert(result == Vector(values: [5, 7, 10, 2]) )
+        XCTAssert(result == Vector(values: [0, 0, 0, 0, 0, 0, 1, 0]) )
     }
 
     func testMatrixTensorMatrix() throws {
@@ -143,17 +148,17 @@ final class quantum_speedupTests: XCTestCase {
 
     func testControlledValveConstruct() {
         let register = QuantumRegister(register: [0,0,0,0,0,0,0,0,0,0], dimensity: 2)
-        let valve = SingleValve(generator: IdentityMatrixGenerator(), qbitIndex: 0)
+        let valve = SingleValve(generator: IdentityMatrixGenerator(), quditIndex: 0)
         let controlledValve = ControlledValve(controlIndexes: [0], valve: valve)
 
         measure {
             register.apply(valve: controlledValve)
         }
     }
-    
+
     func testControlledValveConstructCurrect() {
         let register = QuantumRegister(register: [0, 0], dimensity: 2)
-        let valve = SingleValve(generator: XMatrixGenerator(), qbitIndex: 1)
+        let valve = SingleValve(generator: XMatrixGenerator(), quditIndex: 1)
         let controlledValve = ControlledValve(controlIndexes: [0], valve: valve)
 
         XCTAssert(
@@ -189,5 +194,79 @@ final class quantum_speedupTests: XCTestCase {
         measure {
             _ = matrix.rotated;
         }
+    }
+
+    func testMatrixMultMatrix() {
+        let matrix1 = Matrix(values: [4, 2, 9, 0])
+        let matrix2 = Matrix(values: [3, 1, -3, 4])
+
+        XCTAssert((matrix1 * matrix2) == Matrix(values: [6, 12, 27, 9]))
+    }
+
+    func testCNOTConstruct() {
+        let size = 8
+        let controlIndex = 6
+        let valveIndex = 3
+        let register = QuantumRegister(register: .init(repeating: 0, count: size), dimensity: 2)
+
+        let finalResult = ControlledValve(controlIndexes: [controlIndex], valve: X(at: valveIndex)).generateMatrix(for: register)
+        var result1 = Matrix(values: [1])
+        var result2 = Matrix(values: [1])
+
+        for i in 0..<size {
+            if i == controlIndex {
+                let matrix = Matrix(values: .init(repeating: 0, count: Int(powf(2, Float(register.dimensity)))))
+                matrix[0, 0] = 1
+
+                result1 = result1 ** matrix
+            } else {
+                result1 = result1 ** Matrix.identity(dimension: 2)
+            }
+        }
+
+        for i in 0..<size {
+            if i == controlIndex {
+                let matrix = Matrix(values: .init(repeating: 0, count: Int(powf(2, Float(register.dimensity)))))
+                matrix[1, 1] = 1
+
+                result2 = result2 ** matrix
+            } else if i == valveIndex {
+                result2 = result2 ** XMatrixGenerator().generate(dimension: 2)
+            } else {
+                result2 = result2 ** Matrix.identity(dimension: 2)
+            }
+        }
+
+        XCTAssert((result1 + result2) == finalResult)
+    }
+
+    func testFurie() {
+        let size: Float = 8
+        let dimention = Int(powf(2, size))
+        let register = QuantumRegister(register: .init(repeating: 0, count: Int(size)), dimensity: 2)
+
+        let matrixQRT = RQFT(qbitCount: Int(size)).generateMatrix(for: register)
+
+        var generatedQRT = Matrix.identity(dimension: dimention)
+
+        for i in 0..<Int(size) {
+            generatedQRT = generatedQRT * H(at: i).generateMatrix(for: register)
+
+            for j in (i + 1)..<Int(size) {
+                let angle = (2 * Float.pi) / powf(2, Float(j - i + 1))
+                let controlledRZ = ControlledValve(controlIndexes: [j], valve: RZ(at: i, angle: angle))
+                generatedQRT = generatedQRT * controlledRZ.generateMatrix(for: register)
+            }
+        }
+
+        for i in 0..<Int(size) / 2 {
+            generatedQRT = generatedQRT * Swap(i, Int(size) - i - 1).generateMatrix(for: register)
+        }
+
+
+        register.apply(valve: CustomValve(matrix: generatedQRT))
+        print(register.stateSum)
+
+        XCTAssert(matrixQRT == generatedQRT)
     }
 }

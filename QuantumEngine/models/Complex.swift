@@ -38,7 +38,10 @@ extension Complex: CustomStringConvertible {
 
 extension Complex: Equatable {
     public static func == (left: Complex, right: Complex) -> Bool {
-        return left.values == right.values
+        let placesCount = 4
+
+        return left.values[0].roundToPlaces(places: placesCount) == right.values[0].roundToPlaces(places: placesCount) &&
+            left.values[1].roundToPlaces(places: placesCount) == right.values[1].roundToPlaces(places: placesCount)
     }
 }
 

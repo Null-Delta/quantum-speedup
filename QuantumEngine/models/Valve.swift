@@ -9,31 +9,29 @@ import Foundation
 
 // Протокол, описывающий квантовый вентиль
 // Вентиль должен предоставлять унитарную матрицу для данного регистра
-
-
 public protocol Valve: AnyObject {
     func generateMatrix(for register: QuantumRegister) -> Matrix
 }
 
-// Класс однокубитных вентелей
+// Класс однокудитных вентилей
 public class SingleValve: Valve {
 
-    // Унитарная матрица, описывающая вентиль
+    // Генератор унитарной матрицы, описывающий вентиль
     private(set) var generator: MatrixGenerator
 
-    // Индекс кубита, к которому применяется вентиль
-    private(set) var qbitIndex: Int
+    // Индекс кудита, к которому применяется вентиль
+    var quditIndex: Int
 
-    public init(generator: MatrixGenerator, qbitIndex: Int) {
+    public init(generator: MatrixGenerator, quditIndex: Int) {
         self.generator = generator
-        self.qbitIndex = qbitIndex
+        self.quditIndex = quditIndex
     }
 
     public func generateMatrix(for register: QuantumRegister) -> Matrix {
-        var result: Matrix = qbitIndex == 0 ? generator.generate(dimension: register.dimensity) : Matrix.identity(dimension: register.dimensity)
+        var result: Matrix = quditIndex == 0 ? generator.generate(dimension: register.dimensity) : Matrix.identity(dimension: register.dimensity)
 
         for i in 1..<register.size {
-            result = result ** (qbitIndex == i ? generator.generate(dimension: register.dimensity) : Matrix.identity(dimension: register.dimensity))
+            result = result ** (quditIndex == i ? generator.generate(dimension: register.dimensity) : Matrix.identity(dimension: register.dimensity))
         }
         return result
     }
@@ -68,17 +66,51 @@ public class ControlledValve: Valve {
     }
 
     public func generateMatrix(for register: QuantumRegister) -> Matrix {
-        var values: [Vector] = .init(repeating: Vector(values: []), count: register.state.size)
-        let valveMatrix = valve.generateMatrix(for: register)
+        if 
+            let singleValve = valve as? SingleValve,
+            let minIndex = [[singleValve.quditIndex], controlIndexes].flatMap({$0}).min(),
+            let maxIndex = [[singleValve.quditIndex], controlIndexes].flatMap({$0}).max(),
+            !(minIndex == 0 && maxIndex == register.size - 1)
 
-        for qubitIndex in 0..<register.state.size {
-            if checkControlQbits(for: qubitIndex, size: register.size) {
-                values[qubitIndex] = register.basicState(stateIndex: qubitIndex) * valveMatrix
-            } else {
-                values[qubitIndex] = register.basicState(stateIndex: qubitIndex)
+        {
+            let smallRegisterSize = maxIndex - minIndex + 1
+            let smallRegister = QuantumRegister(register: Array(repeating: 0, count: smallRegisterSize), dimensity: 2)
+
+            let singleValveCopy = singleValve
+            singleValveCopy.quditIndex -= minIndex
+            let smallControlledValve = ControlledValve(
+                controlIndexes: controlIndexes.map { $0 - minIndex },
+                valve: singleValveCopy
+            )
+
+            var resultMatrix = minIndex == 0 ? smallControlledValve.generateMatrix(for: smallRegister) : Matrix.identity(dimension: 2)
+
+            if minIndex != 0 {
+                for _ in 1..<minIndex {
+                    resultMatrix = resultMatrix ** Matrix.identity(dimension: 2)
+                }
+
+                resultMatrix = resultMatrix ** smallControlledValve.generateMatrix(for: smallRegister)
             }
+            
+            for _ in (maxIndex + 1)..<register.size {
+                resultMatrix = resultMatrix ** Matrix.identity(dimension: 2)
+            }
+
+            return resultMatrix
+        } else {
+            var values: [Vector] = .init(repeating: Vector(values: []), count: register.state.size)
+            let valveMatrix = valve.generateMatrix(for: register)
+
+            for qubitIndex in 0..<register.state.size {
+                if checkControlQbits(for: qubitIndex, size: register.size) {
+                    values[qubitIndex] = register.basicState(stateIndex: qubitIndex) * valveMatrix
+                } else {
+                    values[qubitIndex] = register.basicState(stateIndex: qubitIndex)
+                }
+            }
+            return Matrix(values: values.flatMap({ $0.values })).rotated
         }
-        return Matrix(values: values.flatMap({ $0.values })).rotated
     }
 
     // Проверяет являются ли все биты в двоичном представлении данного числа единицами

@@ -96,10 +96,8 @@ struct GroverView: View {
         
         switch index {
         case 0:
-            print(register.stateSum)
             for i in 0..<register.size {
                 register.apply(valve: H(at: i))
-                print(register.stateSum)
             }
             return false
             
@@ -107,7 +105,6 @@ struct GroverView: View {
             register.apply(valve: function!)
             register.apply(valve: preValve!)
             
-            print(register.stateSum)
             return false
             
         default:

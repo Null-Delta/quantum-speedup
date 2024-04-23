@@ -43,12 +43,41 @@ kernel void vectorMultMatrix(constant Complex *inputVector [[buffer(0)]],
                              constant float &size [[buffer(3)]],
                              ushort gid [[thread_position_in_grid]]
                              ) {
+
+    if (gid > size) { return; }
+
     outputVector[gid] = Complex(0, 0);
 
-    for(int index = 0; index < size; index++) {
+    for(ushort index = 0; index < size; index++) {
         outputVector[gid] = Complex(outputVector[gid].value) +
-                            (Complex(inputVector[index].value) * Complex(matrix[gid * (int)size + index].value));
+                            (Complex(inputVector[index].value) * Complex(matrix[index * ushort(size) + gid].value));
     }
+}
+
+kernel void matrixMultMatrix(constant Complex *leftMatrix [[buffer(0)]],
+                             constant Complex *rightMatrix [[buffer(1)]],
+                             device Complex *outputMatrix [[buffer(2)]],
+                             constant float &size [[buffer(3)]],
+                             ushort gid [[thread_position_in_grid]]
+                             ) {
+    if (gid > size * size) { return; }
+    
+    outputMatrix[gid] = Complex(0, 0);
+    ushort x = gid % ushort(size);
+    ushort y = gid / ushort(size);
+
+    for(ushort offset = 0; offset < size; offset++) {
+        outputMatrix[gid] = Complex(outputMatrix[gid]) + Complex(leftMatrix[y * ushort(size) + offset]) * Complex(rightMatrix[offset * ushort(size) + x]);
+    }
+}
+
+kernel void matrixPlusMatrix(constant Complex *leftMatrix [[buffer(0)]],
+                             constant Complex *rightMatrix [[buffer(1)]],
+                             device Complex *outputMatrix [[buffer(2)]],
+                             constant float &size [[buffer(3)]],
+                             ushort gid [[thread_position_in_grid]]
+                             ) {
+    outputMatrix[gid] = Complex(leftMatrix[gid]) + Complex(rightMatrix[gid]);
 }
 
 kernel void matrixTensorMatrix(constant Complex *firstMatrix [[buffer(0)]],
@@ -109,5 +138,5 @@ kernel void functionMatrix(device Complex *outputMatrix [[buffer(0)]],
 
     int finalValue = ((pos.y >> outputInt) << outputInt) + value;
 
-    outputMatrix[pos.y * intsize + pos.x] = Complex(finalValue == pos.x ? 1 : 0, 0);
+    outputMatrix[pos.x * intsize + pos.y] = Complex(finalValue == pos.x ? 1 : 0, 0);
 }

@@ -58,11 +58,14 @@ public class QuantumRegister: ObservableObject {
         state = state * valve.generateMatrix(for: self)
     }
 
-    // Измерение состояния определенного бита
+    // Измерение состояния определенного кудита
     public func measure(at index: Int) -> Int {
+        // вычисление вектора вероятностей измерения базисных состояний
         let probabilities = calculateProbabilities(at: index)
 
         var result = Float.random(in: 0...1)
+
+        // значение, которое по итогу будет измерено
         var measuredValue: Int = -1
         
         for i in 0..<probabilities.count {
@@ -78,6 +81,7 @@ public class QuantumRegister: ObservableObject {
 
         let newState = Vector(values: .init(repeating: 0, count: state.size))
 
+        // изменение состояния регистра с учетом измеренного кудита
         for stateIndex in 0..<state.size {
             if checkIndex(number: stateIndex, value: measuredValue, forIndex: index) {
                 newState[stateIndex] = state[stateIndex] * Complex(re: sqrtf(k), im: 0)
@@ -91,24 +95,27 @@ public class QuantumRegister: ObservableObject {
         return measuredValue
     }
     
-    private func checkIndex(number: Int, value: Int, forIndex index: Int) -> Bool {
-        return number.bit(at: size - index - 1, dimensity: dimensity) == value
-    }
-    
     // расчет вероятностей для каждого возможного значения бита
     private func calculateProbabilities(at index: Int) -> [Float] {
 
         var probabilities: [Float] = .init(repeating: 0, count: dimensity)
-                
+
+        // проходимся по всем базисным состояниям
         for dim in 0..<dimensity {
             for stateIndex in 0..<state.size {
+                // если у текущего вектора на позиции index находится значение dim
                 if checkIndex(number: stateIndex, value: dim, forIndex: index) {
+                    // увеличиваем вероятость знчения dim
                     probabilities[dim] += powf(state[stateIndex].module, 2)
                 }
             }
         }
 
         return probabilities
+    }
+
+    private func checkIndex(number: Int, value: Int, forIndex index: Int) -> Bool {
+        return number.bit(at: size - index - 1, dimensity: dimensity) == value
     }
 }
 

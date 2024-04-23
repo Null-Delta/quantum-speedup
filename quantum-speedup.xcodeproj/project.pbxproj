@@ -26,6 +26,38 @@
 		86B877FE291F764C0051C3D8 /* matrix-actions.metal in Sources */ = {isa = PBXBuildFile; fileRef = 86B877FD291F764C0051C3D8 /* matrix-actions.metal */; };
 		86B87806291F8BC40051C3D8 /* Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B87805291F8BC40051C3D8 /* Complex.swift */; };
 		912E08AB2A019BF800525CC4 /* MatrixGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E08AA2A019BF800525CC4 /* MatrixGenerator.swift */; };
+		913592622BD57665004D3B36 /* quantum-speedup.app in Resources */ = {isa = PBXBuildFile; fileRef = 86B877C8291F74F10051C3D8 /* quantum-speedup.app */; };
+		913592712BD577FC004D3B36 /* QuantumEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913592702BD577FC004D3B36 /* QuantumEngine.swift */; };
+		913592762BD5786E004D3B36 /* matrix-actions.metal in Sources */ = {isa = PBXBuildFile; fileRef = 86B877FD291F764C0051C3D8 /* matrix-actions.metal */; };
+		913592772BD5786E004D3B36 /* Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B87805291F8BC40051C3D8 /* Complex.swift */; };
+		913592782BD5786E004D3B36 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336F0291F9A8F004D02B0 /* Vector.swift */; };
+		913592792BD5786E004D3B36 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336EC291F96F6004D02B0 /* Matrix.swift */; };
+		9135927A2BD5786E004D3B36 /* MetalContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336EE291F9722004D02B0 /* MetalContext.swift */; };
+		9135927B2BD5786E004D3B36 /* QuantumRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336F2291FBAE7004D02B0 /* QuantumRegister.swift */; };
+		9135927C2BD5786E004D3B36 /* Valve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336F4291FBB0F004D02B0 /* Valve.swift */; };
+		9135927D2BD5786E004D3B36 /* ArrayHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336F6291FBC5B004D02B0 /* ArrayHelper.swift */; };
+		9135927E2BD5786E004D3B36 /* Valves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336F8291FBDC0004D02B0 /* Valves.swift */; };
+		9135927F2BD5786E004D3B36 /* MatrixGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E08AA2A019BF800525CC4 /* MatrixGenerator.swift */; };
+		913592802BD57926004D3B36 /* matrix-actions.metal in Sources */ = {isa = PBXBuildFile; fileRef = 86B877FD291F764C0051C3D8 /* matrix-actions.metal */; };
+		913592812BD57926004D3B36 /* Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B87805291F8BC40051C3D8 /* Complex.swift */; };
+		913592822BD57926004D3B36 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336F0291F9A8F004D02B0 /* Vector.swift */; };
+		913592832BD57926004D3B36 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336EC291F96F6004D02B0 /* Matrix.swift */; };
+		913592842BD57926004D3B36 /* MetalContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336EE291F9722004D02B0 /* MetalContext.swift */; };
+		913592852BD57926004D3B36 /* QuantumRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336F2291FBAE7004D02B0 /* QuantumRegister.swift */; };
+		913592862BD57926004D3B36 /* Valve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336F4291FBB0F004D02B0 /* Valve.swift */; };
+		913592872BD57926004D3B36 /* ArrayHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336F6291FBC5B004D02B0 /* ArrayHelper.swift */; };
+		913592882BD57926004D3B36 /* Valves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A336F8291FBDC0004D02B0 /* Valves.swift */; };
+		913592892BD57926004D3B36 /* MatrixGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E08AA2A019BF800525CC4 /* MatrixGenerator.swift */; };
+		9135928B2BD59ADA004D3B36 /* ParamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9135928A2BD59ADA004D3B36 /* ParamsView.swift */; };
+		9135928F2BD5C9E8004D3B36 /* XModPowParamsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9135928E2BD5C9E8004D3B36 /* XModPowParamsView.swift */; };
+		913592912BD5D2C9004D3B36 /* StatePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913592902BD5D2C9004D3B36 /* StatePreview.swift */; };
+		91E5A8C72BCF4B9500CCFA40 /* Quantum_EditorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5A8C62BCF4B9500CCFA40 /* Quantum_EditorApp.swift */; };
+		91E5A8C92BCF4B9500CCFA40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5A8C82BCF4B9500CCFA40 /* ContentView.swift */; };
+		91E5A8CB2BCF4B9600CCFA40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E5A8CA2BCF4B9600CCFA40 /* Assets.xcassets */; };
+		91E5A8CE2BCF4B9600CCFA40 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91E5A8CD2BCF4B9600CCFA40 /* Preview Assets.xcassets */; };
+		91E5A8D32BCF4BBD00CCFA40 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5A8D22BCF4BBD00CCFA40 /* EditorView.swift */; };
+		91E5A8D62BCF4D1F00CCFA40 /* AlghoritmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5A8D52BCF4D1F00CCFA40 /* AlghoritmModel.swift */; };
+		91E5A8D82BCF4EA100CCFA40 /* EditorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E5A8D72BCF4EA100CCFA40 /* EditorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +75,26 @@
 			remoteGlobalIDString = 86B877C7291F74F10051C3D8;
 			remoteInfo = "quantum-speedup";
 		};
+		913592632BD57665004D3B36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86B877C0291F74F10051C3D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86B877C7291F74F10051C3D8;
+			remoteInfo = "quantum-speedup";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9135926C2BD577FC004D3B36 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6A2A286D292BBF9100EFDB8A /* ShorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShorView.swift; sourceTree = "<group>"; };
@@ -69,6 +120,20 @@
 		86B877FD291F764C0051C3D8 /* matrix-actions.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = "matrix-actions.metal"; sourceTree = "<group>"; };
 		86B87805291F8BC40051C3D8 /* Complex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complex.swift; sourceTree = "<group>"; };
 		912E08AA2A019BF800525CC4 /* MatrixGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixGenerator.swift; sourceTree = "<group>"; };
+		913592652BD576EA004D3B36 /* Quantum-Editor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Quantum-Editor-Info.plist"; sourceTree = SOURCE_ROOT; };
+		9135926E2BD577FC004D3B36 /* libQuantumEngine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libQuantumEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		913592702BD577FC004D3B36 /* QuantumEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantumEngine.swift; sourceTree = "<group>"; };
+		9135928A2BD59ADA004D3B36 /* ParamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamsView.swift; sourceTree = "<group>"; };
+		9135928E2BD5C9E8004D3B36 /* XModPowParamsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XModPowParamsView.swift; sourceTree = "<group>"; };
+		913592902BD5D2C9004D3B36 /* StatePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePreview.swift; sourceTree = "<group>"; };
+		91E5A8C42BCF4B9500CCFA40 /* Quantum Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quantum Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		91E5A8C62BCF4B9500CCFA40 /* Quantum_EditorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quantum_EditorApp.swift; sourceTree = "<group>"; };
+		91E5A8C82BCF4B9500CCFA40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		91E5A8CA2BCF4B9600CCFA40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		91E5A8CD2BCF4B9600CCFA40 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		91E5A8D22BCF4BBD00CCFA40 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
+		91E5A8D52BCF4D1F00CCFA40 /* AlghoritmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlghoritmModel.swift; sourceTree = "<group>"; };
+		91E5A8D72BCF4EA100CCFA40 /* EditorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +158,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9135926B2BD577FC004D3B36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91E5A8C12BCF4B9500CCFA40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -102,7 +181,10 @@
 				86B877CA291F74F10051C3D8 /* quantum-speedup */,
 				86B877DC291F74F20051C3D8 /* quantum-speedupTests */,
 				86B877E6291F74F20051C3D8 /* quantum-speedupUITests */,
+				91E5A8C52BCF4B9500CCFA40 /* Quantum Editor */,
+				9135926F2BD577FC004D3B36 /* QuantumEngine */,
 				86B877C9291F74F10051C3D8 /* Products */,
+				913592612BD57665004D3B36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +194,8 @@
 				86B877C8291F74F10051C3D8 /* quantum-speedup.app */,
 				86B877D9291F74F20051C3D8 /* quantum-speedupTests.xctest */,
 				86B877E3291F74F20051C3D8 /* quantum-speedupUITests.xctest */,
+				91E5A8C42BCF4B9500CCFA40 /* Quantum Editor.app */,
+				9135926E2BD577FC004D3B36 /* libQuantumEngine.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,7 +203,6 @@
 		86B877CA291F74F10051C3D8 /* quantum-speedup */ = {
 			isa = PBXGroup;
 			children = (
-				86B877F6291F75080051C3D8 /* models */,
 				86B877CB291F74F10051C3D8 /* quantum_speedupApp.swift */,
 				6A2A286D292BBF9100EFDB8A /* ShorView.swift */,
 				6A2A286F292BC3AF00EFDB8A /* GroverView.swift */,
@@ -171,6 +254,64 @@
 				912E08AA2A019BF800525CC4 /* MatrixGenerator.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		913592612BD57665004D3B36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9135926F2BD577FC004D3B36 /* QuantumEngine */ = {
+			isa = PBXGroup;
+			children = (
+				86B877F6291F75080051C3D8 /* models */,
+				913592702BD577FC004D3B36 /* QuantumEngine.swift */,
+			);
+			path = QuantumEngine;
+			sourceTree = "<group>";
+		};
+		91E5A8C52BCF4B9500CCFA40 /* Quantum Editor */ = {
+			isa = PBXGroup;
+			children = (
+				913592652BD576EA004D3B36 /* Quantum-Editor-Info.plist */,
+				91E5A8D92BCF59AD00CCFA40 /* Views */,
+				91E5A8D42BCF4D1000CCFA40 /* Models */,
+				91E5A8C62BCF4B9500CCFA40 /* Quantum_EditorApp.swift */,
+				91E5A8CA2BCF4B9600CCFA40 /* Assets.xcassets */,
+				91E5A8CC2BCF4B9600CCFA40 /* Preview Content */,
+			);
+			path = "Quantum Editor";
+			sourceTree = "<group>";
+		};
+		91E5A8CC2BCF4B9600CCFA40 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				91E5A8CD2BCF4B9600CCFA40 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		91E5A8D42BCF4D1000CCFA40 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				91E5A8D52BCF4D1F00CCFA40 /* AlghoritmModel.swift */,
+				91E5A8D72BCF4EA100CCFA40 /* EditorModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		91E5A8D92BCF59AD00CCFA40 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91E5A8C82BCF4B9500CCFA40 /* ContentView.swift */,
+				91E5A8D22BCF4BBD00CCFA40 /* EditorView.swift */,
+				9135928A2BD59ADA004D3B36 /* ParamsView.swift */,
+				9135928E2BD5C9E8004D3B36 /* XModPowParamsView.swift */,
+				913592902BD5D2C9004D3B36 /* StatePreview.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +370,41 @@
 			productReference = 86B877E3291F74F20051C3D8 /* quantum-speedupUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		9135926D2BD577FC004D3B36 /* QuantumEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 913592722BD577FD004D3B36 /* Build configuration list for PBXNativeTarget "QuantumEngine" */;
+			buildPhases = (
+				9135926A2BD577FC004D3B36 /* Sources */,
+				9135926B2BD577FC004D3B36 /* Frameworks */,
+				9135926C2BD577FC004D3B36 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuantumEngine;
+			productName = QuantumEngine;
+			productReference = 9135926E2BD577FC004D3B36 /* libQuantumEngine.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		91E5A8C32BCF4B9500CCFA40 /* Quantum Editor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91E5A8D12BCF4B9600CCFA40 /* Build configuration list for PBXNativeTarget "Quantum Editor" */;
+			buildPhases = (
+				91E5A8C02BCF4B9500CCFA40 /* Sources */,
+				91E5A8C12BCF4B9500CCFA40 /* Frameworks */,
+				91E5A8C22BCF4B9500CCFA40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				913592642BD57665004D3B36 /* PBXTargetDependency */,
+			);
+			name = "Quantum Editor";
+			productName = "Quantum Editor";
+			productReference = 91E5A8C42BCF4B9500CCFA40 /* Quantum Editor.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -236,7 +412,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1410;
+				LastSwiftUpdateCheck = 1510;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					86B877C7291F74F10051C3D8 = {
@@ -250,6 +426,12 @@
 					86B877E2291F74F20051C3D8 = {
 						CreatedOnToolsVersion = 14.1;
 						TestTargetID = 86B877C7291F74F10051C3D8;
+					};
+					9135926D2BD577FC004D3B36 = {
+						CreatedOnToolsVersion = 15.1;
+					};
+					91E5A8C32BCF4B9500CCFA40 = {
+						CreatedOnToolsVersion = 15.1;
 					};
 				};
 			};
@@ -269,6 +451,8 @@
 				86B877C7291F74F10051C3D8 /* quantum-speedup */,
 				86B877D8291F74F20051C3D8 /* quantum-speedupTests */,
 				86B877E2291F74F20051C3D8 /* quantum-speedupUITests */,
+				91E5A8C32BCF4B9500CCFA40 /* Quantum Editor */,
+				9135926D2BD577FC004D3B36 /* QuantumEngine */,
 			);
 		};
 /* End PBXProject section */
@@ -294,6 +478,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91E5A8C22BCF4B9500CCFA40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				913592622BD57665004D3B36 /* quantum-speedup.app in Resources */,
+				91E5A8CE2BCF4B9600CCFA40 /* Preview Assets.xcassets in Resources */,
+				91E5A8CB2BCF4B9600CCFA40 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +532,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9135926A2BD577FC004D3B36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				913592762BD5786E004D3B36 /* matrix-actions.metal in Sources */,
+				913592772BD5786E004D3B36 /* Complex.swift in Sources */,
+				913592782BD5786E004D3B36 /* Vector.swift in Sources */,
+				913592792BD5786E004D3B36 /* Matrix.swift in Sources */,
+				9135927A2BD5786E004D3B36 /* MetalContext.swift in Sources */,
+				9135927B2BD5786E004D3B36 /* QuantumRegister.swift in Sources */,
+				9135927C2BD5786E004D3B36 /* Valve.swift in Sources */,
+				9135927D2BD5786E004D3B36 /* ArrayHelper.swift in Sources */,
+				9135927E2BD5786E004D3B36 /* Valves.swift in Sources */,
+				9135927F2BD5786E004D3B36 /* MatrixGenerator.swift in Sources */,
+				913592712BD577FC004D3B36 /* QuantumEngine.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91E5A8C02BCF4B9500CCFA40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				913592912BD5D2C9004D3B36 /* StatePreview.swift in Sources */,
+				913592802BD57926004D3B36 /* matrix-actions.metal in Sources */,
+				913592812BD57926004D3B36 /* Complex.swift in Sources */,
+				913592822BD57926004D3B36 /* Vector.swift in Sources */,
+				913592832BD57926004D3B36 /* Matrix.swift in Sources */,
+				913592842BD57926004D3B36 /* MetalContext.swift in Sources */,
+				913592852BD57926004D3B36 /* QuantumRegister.swift in Sources */,
+				913592862BD57926004D3B36 /* Valve.swift in Sources */,
+				913592872BD57926004D3B36 /* ArrayHelper.swift in Sources */,
+				913592882BD57926004D3B36 /* Valves.swift in Sources */,
+				913592892BD57926004D3B36 /* MatrixGenerator.swift in Sources */,
+				9135928B2BD59ADA004D3B36 /* ParamsView.swift in Sources */,
+				91E5A8D32BCF4BBD00CCFA40 /* EditorView.swift in Sources */,
+				91E5A8D82BCF4EA100CCFA40 /* EditorModel.swift in Sources */,
+				91E5A8C92BCF4B9500CCFA40 /* ContentView.swift in Sources */,
+				91E5A8C72BCF4B9500CCFA40 /* Quantum_EditorApp.swift in Sources */,
+				91E5A8D62BCF4D1F00CCFA40 /* AlghoritmModel.swift in Sources */,
+				9135928F2BD5C9E8004D3B36 /* XModPowParamsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -350,6 +587,11 @@
 			isa = PBXTargetDependency;
 			target = 86B877C7291F74F10051C3D8 /* quantum-speedup */;
 			targetProxy = 86B877E4291F74F20051C3D8 /* PBXContainerItemProxy */;
+		};
+		913592642BD57665004D3B36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86B877C7291F74F10051C3D8 /* quantum-speedup */;
+			targetProxy = 913592632BD57665004D3B36 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -632,6 +874,126 @@
 			};
 			name = Release;
 		};
+		913592732BD577FD004D3B36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G7668ALM57;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		913592742BD577FD004D3B36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G7668ALM57;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		91E5A8CF2BCF4B9600CCFA40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Quantum Editor/Preview Content\"";
+				DEVELOPMENT_TEAM = G7668ALM57;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Quantum-Editor-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.null.delta.Quantum-Editor";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		91E5A8D02BCF4B9600CCFA40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Quantum Editor/Preview Content\"";
+				DEVELOPMENT_TEAM = G7668ALM57;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Quantum-Editor-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.null.delta.Quantum-Editor";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -667,6 +1029,24 @@
 			buildConfigurations = (
 				86B877F4291F74F20051C3D8 /* Debug */,
 				86B877F5291F74F20051C3D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		913592722BD577FD004D3B36 /* Build configuration list for PBXNativeTarget "QuantumEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				913592732BD577FD004D3B36 /* Debug */,
+				913592742BD577FD004D3B36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91E5A8D12BCF4B9600CCFA40 /* Build configuration list for PBXNativeTarget "Quantum Editor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91E5A8CF2BCF4B9600CCFA40 /* Debug */,
+				91E5A8D02BCF4B9600CCFA40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

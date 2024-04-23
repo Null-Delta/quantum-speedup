@@ -56,6 +56,14 @@ extension Matrix {
         return MetalContext.shared.vectorMultMatrix(vector: left, matrix: right)
     }
 
+    public static func *(left: Matrix, right: Matrix) -> Matrix {
+        return MetalContext.shared.matrixMultMatrix(matrixLeft: left, matrixRight: right)
+    }
+
+    public static func +(left: Matrix, right: Matrix) -> Matrix {
+        return MetalContext.shared.matrixPlusMatrix(matrixLeft: left, matrixRight: right)
+    }
+
     public static func **(left: Matrix, right: Matrix) -> Matrix {
         return MetalContext.shared.MatrixTensorMatrix(m1: left, m2: right)
     }
